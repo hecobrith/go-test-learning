@@ -39,6 +39,29 @@ func titleCase(text string) string {
 }
 ```
 
+Remember that in order to change a value alocation on memory it's necesary to make a pointer func declaration, if not the value would not change. When we initialize a new structure these kind of strategy its essencial when you try to administrate some **state** over the code
+
+```go
+struct Person {
+    firstName: string
+    lastName: string
+}
+
+func main() {
+ p := organization.Person()
+ p.SetTwitterHandler(handler:"@someuser")
+}
+
+func (p *Person) FullName() string {
+    return fmt.Sprintf( format: "%s %s", p.firstName, p.lastName)
+}
+```
+
+State is carried away within functions,stateful functions, are the memory saved inisde some function.
+
+Panics happend very often nd ints necesary to know hot to get out of them
+
+
 ## Error handling
 
 There are many ways to handle errors in Go, but the main premise its that it doesnt exist the try, catch block, or somthing like that. So its necesary to do the **nil** trick. all functions return two values, the variable and an error, if there the error has an object that its not nil then the variable was pointed to an object, so an error.
